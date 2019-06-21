@@ -15,8 +15,8 @@ const dogList = [
     story: 'Owner Passed away'
   },
   {
-    imageURL: 'black lab image',
-    imageDescription: 'A panting black lab just getting out of a pond.',
+    imageURL: 'https://i.ytimg.com/vi/RgjIK8Q8J4s/maxresdefault.jpg',
+    imageDescription: 'a black lab next to a body of water.',
     name: 'Checkers',
     sex: 'Female',
     age: 4,
@@ -24,8 +24,8 @@ const dogList = [
     story: 'Rescued stray'
   },
   {
-    imageURL: 'Corgie eating some food',
-    imageDescription: 'Corgie eating food.',
+    imageURL: 'https://woofdog.org/wp-content/uploads/2017/08/Corgi-puppy-eating.jpg',
+    imageDescription: 'puppy Corgie eating food.',
     name: 'Sarge',
     sex: 'Female',
     age: 1,
@@ -64,8 +64,8 @@ dogRoute
     let currentDog = dogQueue.peek();
     dogQueue.dequeue();
     res
-      .status(202)
-      .send(`Congradulations on Adopting ${currentDog.name}'`);
+      .json(currentDog)
+      .send();
   });
 
 module.exports = dogRoute;  
