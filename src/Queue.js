@@ -46,6 +46,13 @@ class Queue {
     }
     return node.data;
   }
+  peekNext(){
+    const node = this.first.next;
+    if(node === null){
+      return 'Nothing found';
+    }
+    return node.data;
+  }
 }
 
 
@@ -54,10 +61,11 @@ function main(){
 
   aque.enqueue(2);
   aque.enqueue(5);
+  aque.enqueue(4);
 
   console.log(aque);
 
-  console.log(aque.peek());
+  console.log(aque.peekNext());
 }
 
 //main();

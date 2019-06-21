@@ -41,12 +41,9 @@ function dogsQueue(dogs){
   for(let i = 0; i< dogs.length; i++){
     dogQueue.enqueue(dogs[i]);
   }
-
-  return dogQueue.peek();
 }
 
 dogsQueue(dogList);
-
 
 dogRoute
   .get('/', (req, res, next) => {
@@ -54,6 +51,13 @@ dogRoute
     res
       .status(200)
       .json(currentDog)
+      .send();
+  })
+  .get('/next', (req, res, next) => {
+    let nextDog = dogQueue.peekNext();
+    res
+      .status(200)
+      .json(nextDog)
       .send();
   })
   .delete('/', (req, res, next) =>{
