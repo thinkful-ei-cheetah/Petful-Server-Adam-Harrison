@@ -2,6 +2,8 @@
 
 Adam and Harrison
 
+deployed here: https://petful-server-adam-harrison.herokuapp.com/
+
 # API
 for this server we are using get requests to look at the first two animals in a list. 
 
