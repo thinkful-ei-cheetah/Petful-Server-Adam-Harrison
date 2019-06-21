@@ -19,9 +19,18 @@ const dogList = [
     imageDescription: 'A panting black lab just getting out of a pond.',
     name: 'Checkers',
     sex: 'Female',
-    age: 3,
+    age: 4,
     breed: 'Black Lab',
     story: 'Rescued stray'
+  },
+  {
+    imageURL: 'Corgie eating some food',
+    imageDescription: 'Corgie eating food.',
+    name: 'Sarge',
+    sex: 'Female',
+    age: 1,
+    breed: 'Corgie',
+    story: 'unwanted puppy'
   },
 ];
 
@@ -48,9 +57,11 @@ dogRoute
       .send();
   })
   .delete('/', (req, res, next) =>{
-
+    let currentDog = dogQueue.peek();
+    dogQueue.dequeue();
     res
-      .send("Congradulations on Adopting 'dog name here' ");
+      .status(202)
+      .send(`Congradulations on Adopting ${currentDog.name}'`);
   });
 
 module.exports = dogRoute;  
