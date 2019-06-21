@@ -1,3 +1,4 @@
+'use strict';
 const express = require('express');
 const cors = require('cors');
 
@@ -24,3 +25,7 @@ app.use(function (err, req, res, next) {
 app.listen(8080,()=>{
   console.log('Serving on 8080');
 });
+
+// app.get('/api/cat', (req, res, next) => {
+//   res.send('hi dog');
+// });
