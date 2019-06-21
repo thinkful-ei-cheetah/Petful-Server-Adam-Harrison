@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const catRoute = require('./catRouter');
 const dogRoute = require('./dogRouter');
+const usersRoute = require('./UsersRouter');
 const CLIENT_ORIGIN = require('./config');
 
 
@@ -34,3 +35,4 @@ app.listen(8080,()=>{
 
 app.use('/api/cat', catRoute);
 app.use('/api/dog', dogRoute);
+app.use('/api/users', usersRoute);
