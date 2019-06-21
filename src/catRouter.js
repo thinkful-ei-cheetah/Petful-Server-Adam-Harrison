@@ -16,7 +16,7 @@ const catList = [
   },
   {
     imageURL: 'https://cdn1-www.cattime.com/assets/uploads/gallery/abyssinian-cats-and-kittens/abyssinian-1.jpg',
-    imageDescription: 'Orange Abyssinian cat with blackish fur staring at camera',
+    imageDescription: 'Abyssinian cat with orange and black fur staring at camera',
     name: 'Ruffles',
     sex: 'Male',
     age: 5,
@@ -24,13 +24,13 @@ const catList = [
     story: 'Found while searchin he was searching through some garbage'
   },
   {
-    imageURL: 'https://cdn1-www.cattime.com/assets/uploads/gallery/abyssinian-cats-and-kittens/abyssinian-1.jpg',
-    imageDescription: 'Abyssinian cat with orange and black fur staring at camera',
-    name: 'Ruffles',
-    sex: 'Male',
-    age: 5,
-    breed: 'Abyssinian',
-    story: 'Found while searchin he was searching through some garbage'
+    imageURL: 'https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/43827469/1/?bust=1548107818',
+    imageDescription: 'Gray tabby with black stripes looking at camera',
+    name: 'Chazzy',
+    sex: 'female',
+    age: 3,
+    breed: 'Tabby',
+    story: 'Given up for adoption by owner'
   }
 ];
 
@@ -39,7 +39,7 @@ let catQueue = new Queue();
 function catsQueue(cats){
   
   for(let i = 0; i< cats.length; i++){
-    catsQueue.enqueue(cats[i]);
+    catQueue.enqueue(cats[i]);
   }
 }
 
@@ -65,8 +65,8 @@ catRoute
     let currentCat = catQueue.peek();
     catQueue.dequeue();
     res
-      .status(202)
-      .send(`Congradulations on Adopting ${currentCat.name}'`);
+      .json(currentCat)
+      .send();
   });
 
 module.exports = catRoute;
