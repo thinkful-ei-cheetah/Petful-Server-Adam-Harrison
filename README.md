@@ -1,26 +1,14 @@
-# Express Boilerplate!
+# Petful Server
 
-This is a boilerplate project used for starting new projects!
+Adam and Harrison
 
-## How do set up?
+# API
+for this server we are using get requests to look at the first two animals in a list. 
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+we also use delete requests to delete the first animal in a list. The second animal in a list will then become the fist animal in the list, and the third previusly hidden animal will become the second animal in the list. 
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+we also have a queue of users that are in line to Adopt animals. 
+they are able to post there name and are put into a queue where when they reach the front they will be able to choose from cats or dogs and see the first two of each. 
 
-## Scripts
-
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests in watch mode `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a new heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+# Queue
+  we implemented a queue data structure that we use to create our lists of animals and users. Inside the Queue class we use a peek function to look at the current first item in the list. we can use an enqueue to add items as the last item in a list. We can also use a dequeue to remove the first item in a list.  
