@@ -55,18 +55,4 @@ class Queue {
   }
 }
 
-
-function main(){
-  let aque = new Queue();
-
-  aque.enqueue(2);
-  aque.enqueue(5);
-  aque.enqueue(4);
-
-  console.log(aque);
-
-  console.log(aque.peekNext());
-}
-
-//main();
 module.exports = Queue;
