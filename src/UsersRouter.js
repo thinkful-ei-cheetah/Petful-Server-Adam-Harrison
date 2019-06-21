@@ -10,23 +10,25 @@ users.enqueue('Jake');
 users.enqueue('Samantha');
 
 function userData(users){
-
-  while (users !== null){
-    return users.peek();
+  let output =[]
+  let user=users.first
+  while (user !== null){
+    output.push(user.data)
+    user=user.next
   }
+  return output
 }
-
-
+console.log(userData(users))
 
 usersRoute
   .get('/', (req, res, next) => {
     res
-      .send(users);
+      .send(userData());
   })
   .post('/', (req, res, next) => {
     const { user } = req.body;
     users.enqueue(user);
-    res.send();
+    res.send(userData());
   });
 
 module.exports = usersRoute;
