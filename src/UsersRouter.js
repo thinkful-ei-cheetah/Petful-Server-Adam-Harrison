@@ -7,9 +7,6 @@ const jsonBodyParser = express.json();
 
 let users = new Queue();
 
-users.enqueue({name: 'Jake'});
-users.enqueue({name: 'Samantha'});
-
 function userData(users){
   let output =[];
   let user=users.first;
